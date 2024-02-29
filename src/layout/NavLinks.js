@@ -12,7 +12,7 @@ function NavLinks(props) {
         </NavLink>
 
         <NavLink to='/revoke/0' activeClassName={classes.active} style={{ textDecoration: 'none' }} onClick={() => props.isMobile && props.closeMobileMenu()}>
-          <li>REVOKE</li>
+          <li>DELETE</li>
         </NavLink>
         
         <NavLink to='/download/0' activeClassName={classes.active} style={{ textDecoration: 'none' }} onClick={() => props.isMobile && props.closeMobileMenu()}>

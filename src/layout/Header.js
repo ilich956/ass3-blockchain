@@ -1,6 +1,5 @@
 import {Fragment} from 'react';
 import classes from './Header.module.css'
-import favicon from '../images/favicon.png'
 import MobileNavigation from './MobileNavigation';
 import Navigation from './Navigation';
 
@@ -13,7 +12,6 @@ const Header = props => {
         <div className={classes.navbar} id="navbar">
             <div id="logo" className={classes.logo}>
                 CipherGuard
-               {/* <img src={favicon} style={{width: '90px', height: '80px'}} alt="logo"/> */}
             </div>
             <MobileNavigation />
             <Navigation />

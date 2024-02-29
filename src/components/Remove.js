@@ -102,7 +102,7 @@ const Remove = (props) => {
           <div className="row">
             <input
               type="submit"
-              value="Revoke"
+              value="Delete"
               className="btn"
               disabled={!password || !name || !account}
             ></input>
