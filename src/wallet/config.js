@@ -1,92 +1,178 @@
-export const lock_addr="0xa57ceD96660D493daA9875f4D6Ad5D96FefBFa80"
-export const lock_abi=[
+export const lock_addr = "0xb4b34844df8d1c3986ad0e79510ad6def627edb6";
+export const lock_abi = [
   {
-    "constant": true,
-    "inputs": [],
-    "name": "tokenCounter",
-    "outputs": [
+    anonymous: false,
+    inputs: [
       {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "ipfslink",
-        "type": "string"
+        indexed: true,
+        internalType: "bytes32",
+        name: "fileId",
+        type: "bytes32",
       },
       {
-        "name": "To",
-        "type": "address"
-      }
+        indexed: true,
+        internalType: "address",
+        name: "receiver",
+        type: "address",
+      },
     ],
-    "name": "fileURI",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: "AccessGranted",
+    type: "event",
   },
   {
-    "constant": true,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "name": "tokenId",
-        "type": "uint256"
-      }
-    ],
-    "name": "getlink",
-    "outputs": [
-      {
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "getTokenID",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "tokenId",
-        "type": "uint256"
+        indexed: true,
+        internalType: "bytes32",
+        name: "fileId",
+        type: "bytes32",
       },
       {
-        "name": "removeadd",
-        "type": "address"
-      }
+        indexed: true,
+        internalType: "address",
+        name: "receiver",
+        type: "address",
+      },
     ],
-    "name": "removegrant",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  }
-]
+    name: "AccessRevoked",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "owner",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "bytes32",
+        name: "fileId",
+        type: "bytes32",
+      },
+      {
+        indexed: false,
+        internalType: "string",
+        name: "ipfsHash",
+        type: "string",
+      },
+    ],
+    name: "FileUploaded",
+    type: "event",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes32",
+        name: "",
+        type: "bytes32",
+      },
+    ],
+    name: "files",
+    outputs: [
+      {
+        internalType: "address",
+        name: "owner",
+        type: "address",
+      },
+      {
+        internalType: "string",
+        name: "ipfsHash",
+        type: "string",
+      },
+      {
+        internalType: "string",
+        name: "encryptionKey",
+        type: "string",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes32",
+        name: "fileId",
+        type: "bytes32",
+      },
+    ],
+    name: "getFile",
+    outputs: [
+      {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes32",
+        name: "fileId",
+        type: "bytes32",
+      },
+      {
+        internalType: "address",
+        name: "receiver",
+        type: "address",
+      },
+    ],
+    name: "grantAccess",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes32",
+        name: "fileId",
+        type: "bytes32",
+      },
+      {
+        internalType: "address",
+        name: "receiver",
+        type: "address",
+      },
+    ],
+    name: "revokeAccess",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes32",
+        name: "fileId",
+        type: "bytes32",
+      },
+      {
+        internalType: "string",
+        name: "ipfsHash",
+        type: "string",
+      },
+      {
+        internalType: "string",
+        name: "encryptionKey",
+        type: "string",
+      },
+    ],
+    name: "uploadFile",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+];
